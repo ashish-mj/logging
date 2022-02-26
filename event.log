@@ -1,0 +1,72 @@
+02:52:24,719 root INFO Reading Configuration file
+02:52:24,720 root INFO {'kind': 'ConfigMap', 'application': {'name': 'FileTransfer', 'kafka': {'server': 'localhost:9092', 'topic': 'FileCollector'}}}
+02:52:54,15 root INFO Reading Configuration file
+02:52:54,16 root INFO {'kind': 'ConfigMap', 'application': {'name': 'FileTransfer', 'kafka': {'server': 'localhost:9092', 'topic': 'FileCollector'}}}
+02:53:35,648 root INFO Reading Configuration file
+02:53:35,649 root ERROR Unable to read config file
+Traceback (most recent call last):
+  File "app.py", line 29, in init_config
+    self.config = yaml.safe_load(stream)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/__init__.py", line 162, in safe_load
+    return load(stream, SafeLoader)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/__init__.py", line 114, in load
+    return loader.get_single_data()
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/constructor.py", line 41, in get_single_data
+    node = self.get_single_node()
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/composer.py", line 36, in get_single_node
+    document = self.compose_document()
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/parser.py", line 98, in check_event
+    self.current_event = self.state()
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/parser.py", line 425, in parse_block_mapping_first_key
+    return self.parse_block_mapping_key()
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/yaml/parser.py", line 439, in parse_block_mapping_key
+    "expected <block end>, but found %r" % token.id, token.start_mark)
+yaml.parser.ParserError: while parsing a block mapping
+expected <block end>, but found ':'
+  in "config.yml", line 1, column 2
+08:48:59,111 root INFO Reading Configuration file
+08:48:59,113 root INFO {'kind': 'ConfigMap', 'application': {'name': 'FileTransfer', 'kafka': {'server': 'localhost:9092', 'topic': 'FileCollector'}}}
+09:02:19,984 root INFO Reading Configuration file
+09:02:19,985 root INFO Connecting to kafka
+09:02:19,985 kafka.producer.kafka DEBUG Starting the Kafka producer
+09:02:19,985 kafka.metrics.metrics DEBUG Added sensor with name connections-closed
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name connections-created
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name select-time
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name io-time
+09:02:19,986 kafka.client DEBUG Initiating connection to node bootstrap-0 at localhost:9092
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name bytes-sent-received
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name bytes-sent
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name bytes-received
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name request-latency
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name node-bootstrap-0.bytes-sent
+09:02:19,986 kafka.metrics.metrics DEBUG Added sensor with name node-bootstrap-0.bytes-received
+09:02:19,987 kafka.metrics.metrics DEBUG Added sensor with name node-bootstrap-0.latency
+09:02:19,988 kafka.conn DEBUG <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [unspecified None]>: creating new socket
+09:02:19,989 kafka.conn DEBUG <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv4 ('127.0.0.1', 9092)]>: setting socket option (6, 1, 1)
+09:02:19,989 kafka.conn INFO <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+09:02:19,989 kafka.conn INFO Probing node bootstrap-0 broker version
+09:02:19,989 kafka.conn ERROR Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> returned error 111. Disconnecting.
+09:02:19,989 kafka.conn INFO <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+09:02:20,37 kafka.conn DEBUG <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv4 ('127.0.0.1', 9092)]>: creating new socket
+09:02:20,37 kafka.conn DEBUG <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <disconnected> [IPv4 ('127.0.0.1', 9092)]>: setting socket option (6, 1, 1)
+09:02:20,37 kafka.conn INFO <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+09:02:20,37 kafka.conn ERROR Connect attempt to <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]> returned error 111. Disconnecting.
+09:02:20,37 kafka.conn INFO <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+09:02:20,37 kafka.conn DEBUG <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: reconnect backoff 0.0475273748472678 after 1 failures
+09:02:20,37 root ERROR Unable to 
+Traceback (most recent call last):
+  File "app.py", line 45, in connect_kafka
+    producer = KafkaProducer(bootstrap_servers = bootstrap_servers)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/kafka/producer/kafka.py", line 383, in __init__
+    **self.config)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/kafka/client_async.py", line 244, in __init__
+    self.config['api_version'] = self.check_version(timeout=check_timeout)
+  File "/home/ashish/anaconda3/lib/python3.7/site-packages/kafka/client_async.py", line 900, in check_version
+    raise Errors.NoBrokersAvailable()
+kafka.errors.NoBrokersAvailable: NoBrokersAvailable

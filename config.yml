@@ -1,0 +1,6 @@
+kind : ConfigMap
+application :
+    name : FileTransfer
+    kafka :
+        server : localhost:9092 
+        topic : FileCollector
