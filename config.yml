@@ -4,3 +4,5 @@ application :
     kafka :
         server : localhost:9092 
         topic : FileCollector
+    sourceDir : "/server/"
+    destinationDir : "/local_dir/"
